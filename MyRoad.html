@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Road - First Build</title>
+    <link rel="stylesheet" type="text/css" href="Styles/Main.css">
+    <link rel="stylesheet" type="text/css" href="Styles/Combat.css">
+</head>
+
+<body>
+    <audio id="audio"></audio>
+    <div id="CreateCharacter" >
+        <h1 id="title1" onclick="Target()">Welcome</h1>
+        <h2 id="title2">to</h2>
+        <h1 id="title3">MY ROAD</h1>
+        <p id="undertext">To begin, please create your character.</p>
+        <div id="CreationBox">
+            <div id="Name">
+                <p>Name:</p>
+                <input maxlength="20" id="NameInput">
+            </div>
+            <div id="ClassChoice">
+                <p>Class:</p>
+                <div id="Classes">
+                    <div id="clas0">Rogue</div>
+                    <div id="clas1">Warrior</div>
+                    <div id="clas2">Ranger</div>
+                    <div id="clas3">Mage</div>
+                </div>
+            </div>
+            <div id="Stats">
+                <div id="StatPoints"></div>
+                <p id="REM"></p>
+                <div id="Skills"></div>
+                <p id="REM2"></p>
+                <p id="Info1"></p>
+            </div>
+        </div>
+        <button id="Finish" onclick="CreateChar()">CONFIRM</button>
+    </div>
+    <div id="MainScreen" hidden>
+        <div id="MainMap"></div>
+        <div id="areatext">
+            <p id="AreaNameTEXT">KYS</p>
+        </div>
+        <div id="BasicPlayer">
+            <p id="NameDisplay">Sir Dyck</p>
+            <p id="ClassLevel">Lvl 1 Warrior</p>
+            <div id="HPbar">
+                <div id="HPbarProg"></div>
+                <p id="HPbarText">HP: 50/50</p>
+            </div>
+            <div id="STAbar">
+                <div id="STAbarProg"></div>
+                <p id="STAbarText">STA: 100/100</p>
+            </div>
+            <div id="EXPbar">
+                <div id="EXPbarProg"></div>
+                <p id="EXPbarText">EXP: 0/100</p>
+            </div>
+        </div>
+        <div id="CharacterScreen"></div>
+    </div>
+    <div id="WholeInv" hidden>
+        <div id="equip">
+            <div id="arm1"></div>
+            <div id="arm2"></div>
+            <div id="head"></div>
+            <div id="torso"></div>
+            <div id="leg1"></div>
+            <div id="leg2"></div>
+            <div id="Slots">
+                <div id="Wep1" class="EquipSlot"></div>
+                <div id="Wep2" class="EquipSlot"></div>
+                <div id="Ring1" class="EquipSlot"></div>
+                <div id="Ring2" class="EquipSlot"></div>
+                <div id="headslot" class="EquipSlot"></div>
+                <div id="gloves1" class="EquipSlot"></div>
+                <div id="gloves2" class="EquipSlot"></div>
+                <div id="torsoslot" class="EquipSlot"></div>
+                <div id="legs" class="EquipSlot"></div>
+                <div id="legslot1" class="EquipSlot"></div>
+                <div id="legslot2" class="EquipSlot"></div>
+            </div>
+            <div id="Equip" class="InvBut">Equip</div>
+            <div id="UnEquip" class="InvBut">Unequip</div>
+        </div>
+        <div id="inventory"></div>
+        <div id="itemInfo"></div>
+    </div>
+    <div id="Combat" hidden>
+        <div id="ActionButtons">
+            <button onclick="LightAtk()">Light Attack</button>
+            <button onclick="HeavyAtk()">Heavy Attack</button>
+            <button onclick="TogglePhys()">Physical Specials</button>
+            <button onclick="ToggleMags()">Magical Abilities</button>
+            <button onclick="ToggleItems()">Items</button>
+            <button onclick="Rest()">Rest</button>
+        </div>
+        <div id="SubButtons">
+            <div id="Physicals"></div>
+            <div id="Magicals"></div>
+            <div id="ItemHots"></div>
+        </div>
+        <div id="CharactersCombat">
+            <div id="PlayerBox">
+                <p id="PlayerNameCombat" class="Normal">Jonathan Joestar - Lvl 1</p>
+                <div id="CombatHealthBar">
+                    <p id="CombatHealthText">250/250 HP</p>
+                    <div id="CombatHealthBarFill"></div>
+                </div>
+                <div id="CombatStaminaBar">
+                    <p id="CombatStaminaText">250/250 STA</p>
+                    <div id="CombatStaminaBarFill"></div>
+                </div>
+                <div id="CombatManaBar">
+                    <p id="CombatManaText">250/250 MP</p>
+                    <div id="CombatManaBarFill"></div>
+                </div>
+            </div>
+            <div id="PlayerStatuses">
+            </div>
+            <div id="EnemyStatuses">
+            </div>
+            <div id="EnemyBox">
+                <p id="EnemyNameCombat" class="Death">Goblin Runt - Lvl 73</p>
+                <div id="EnemyCombatHealthBar">
+                    <p id="EnemyCombatHealthText">250/250 HP</p>
+                    <div id="EnemyCombatHealthBarFill"></div>
+                </div>
+                <div id="EnemyCombatStaminaBar">
+                    <p id="EnemyCombatStaminaText">250/250 STA</p>
+                    <div id="EnemyCombatStaminaBarFill"></div>
+                </div>
+            </div>
+        </div>
+        <div id="CombatActionTexts"></div>
+    </div>
+    </div>
+    <div id="StatInfo" class="HideObject"></div>
+    <div id="GeneralPopUP"></div>
+    <div id="BattleEndPOP" hidden>
+        <div id="BattleEndBGFADE"></div>
+        <div id="BattleENDBORDER"></div>
+        <div id="EndTitleBG">
+            <p id="EndTitleText"></p>
+        </div>
+        <div id="EndTextBox1">
+            <p id ="EndText1">You vanquished the Hobgoblin!</p>
+        </div>
+        <p id = "EndText2">You gain 31 EXP for this victory!</p>
+        <button id = "EndBattleBut">Continue</button>
+    </div>
+</body>
+
+</html>
+
+<script src="Scripts/Tables/Locations.js"></script>
+<script src="Scripts/Tables/Classes.js"></script>
+<script src="Scripts/Hover.js"></script>
+<script src="Scripts/DeepCopy.js"></script>
+<script src="Scripts/Values.js"></script>
+<script src="Scripts/Tables/PlayerInv.js"></script>
+<script src="Scripts/InventorySort.js"></script>
+<script src="Scripts/MainScreen.js"></script>
+<script src="Scripts/Tables/test.js"></script>
+<script src="Scripts/Tables/Enemies.js"></script>
+<script src="Scripts/EnemyAI.js"></script>
+<script src="Scripts/Combat.js"></script>
+<script src="Scripts/CharSelect.js"></script>

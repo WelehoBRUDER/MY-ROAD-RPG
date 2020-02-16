@@ -1,0 +1,903 @@
+@font-face {
+    font-family: roboto;
+    src: url(../Fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: barony;
+    src: url(../Fonts/BaroneysTextured.ttf);
+}
+@font-face {
+    font-family: runy;
+    src: url(../Fonts/RunyTunesRevisitedNF.ttf);
+}
+
+body {
+    background: linear-gradient(90deg, rgba(20, 19, 19, 1) 0%, rgb(85, 81, 79) 50%, rgba(20, 19, 19, 1) 100%);
+    font-family: roboto;
+    user-select: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #474747;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(49, 49, 49);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(19, 19, 19);
+  }
+
+#CreateCharacter {
+    width: 800px;
+    height: 920px;
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(119, 119, 117) 50%, rgb(138, 138, 138) 100%);
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -400px;
+    border-radius: 8px;
+    border-style: solid;
+    font-weight: 1000;
+    color: white;
+}
+#title1, #title2, #title3 {
+    text-shadow: 0 0 18px black;
+    font-family: barony;
+}
+
+#title1 {
+    font-size: 100px;
+    position: absolute;
+    left: 300px;
+    top: -25px;
+}
+
+#title2 {
+    font-size: 80px;
+    position: absolute;
+    left: 400px;
+    top: 25px;
+}
+
+#title3 {
+    font-size: 120px;
+    position: absolute;
+    left: 200px;
+    top: 65px;
+    text-decoration: underline;
+}
+
+#undertext {
+    position: absolute;
+    left: 195px;
+    top: 260px;
+    font-size: 25px;
+}
+
+#CreationBox {
+    position: absolute;
+    top: 325px;
+    left: 50px;
+    background-color: rgb(65, 64, 64);
+    width: 700px;
+    height: 550px;
+    border-radius: 24px;
+    box-shadow: inset 0 0 8px 4px black;
+}
+
+#Name {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    font-size: 30px;
+}
+
+#NameInput {
+    background-color:#00000000;
+    border: none;
+    outline: none;
+    color: white;
+    border-style: solid;
+    border-radius: 6px;
+    height: 45px;
+    font-size: 25px;
+    position: absolute;
+    left: 100px;
+    top: 25px;
+    padding-left: 10px;
+}
+
+#ClassChoice p {
+    font-size: 30px;
+    position: absolute;
+    left: 25px;
+    top: 125px;
+}
+
+#Classes {
+    display: flex;
+    position: absolute;
+    left: 120px;
+    top: 125px;
+}
+
+#Classes div {
+    transition: 0.2s;
+    cursor: pointer;
+    width: 100px;
+    height: 150px;
+    border-radius: 12px;
+    margin: 10px;
+    transform: scale(1);
+    border-style: solid;
+    text-align: center;
+    font-size: 29px;
+}
+
+#Classes div:hover {
+    transform: scale(1.1);
+}
+
+#clas0 {
+    background: linear-gradient(90deg, rgba(20, 19, 19, 1), rgb(51, 50, 50) 100%);
+}
+
+#clas1 {
+    background: linear-gradient(90deg, rgb(94, 12, 12), rgb(255, 0, 0) 100%);
+}
+
+#clas2 {
+    background: linear-gradient(90deg, rgb(13, 51, 18), rgb(43, 255, 0) 100%);
+}
+
+#clas3 {
+    background: linear-gradient(90deg, rgb(22, 14, 63), rgb(6, 88, 211) 100%);
+}
+
+.select {
+    border-color: gold;
+}
+
+.HideObject {
+    transform: scale(0);
+}
+
+/* STAT INFO*/
+
+#StatInfo {
+    transition: 0.1s;
+    background-color: rgb(32, 32, 32);
+    width: max-content;
+    height: max-content;
+    padding-right: 15px;
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 0 12px 6px #1f1e1e;
+    user-select: none;
+    pointer-events: none;
+}
+
+#StatInfo * {
+    user-select: none;
+    pointer-events: none;
+}
+
+#StatInfo p {
+    margin-left: 15px;
+    font-size: 12px;
+    color: silver;
+    font-weight: 1000;
+}
+
+/* STAT INFO END*/
+
+#Stats {
+    border-style: solid;
+    width: 600px;
+    height: 195px;
+    position: absolute;
+    left: 50px;
+    bottom: 45px;
+}
+
+#StatPoints {
+    border-style: solid;
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    left: 17px;
+    top: 17px;
+}
+
+#StatPoints p {
+    margin-left: 15px;
+}
+
+#Skills {
+    border-style: solid;
+    width: 425px;
+    height: 150px;
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0px;
+}
+
+#Skills p {
+    margin: 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.PlusButton {
+    width: 18px;
+    height: 18px;
+    border-radius: 25px;
+    background-color: rgb(49, 49, 49);
+    color: rgb(255, 255, 255);
+    border-style: none;
+    text-align: center;
+    font-size: 10px;
+}
+
+.PlusButton:hover {
+    background-color: rgb(29, 29, 29);
+}
+
+#REM {
+    position: absolute;
+    left: 17px;
+    bottom: -20px;
+    font-size: 20px;
+}
+
+#REM2 {
+    position: absolute;
+    right: 17px;
+    bottom: -20px;
+    font-size: 20px;
+}
+
+#Info1 {
+    position: absolute;
+    left: 0px;
+    bottom: -50px;
+    font-size: 13px;
+}
+
+#Finish {
+    transition: 0.2s;
+    font-size: 32px;
+    width: 175px;
+    border-style: none;
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    margin-left: -87.5px;
+    box-shadow: 0 0 4px 2px black;
+}
+
+.grayed {
+    background-color: rgb(46, 46, 46);
+    color: rgb(153, 152, 152);
+}
+
+.ready {
+    background-color: rgb(233, 232, 232);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.ready:hover {
+    background-color: rgb(189, 186, 186);
+    color: rgb(41, 41, 41);
+    box-shadow: 0 0 8px 4px black;
+}
+
+#MainMap {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.map {
+    width: auto;
+    height: auto;
+    margin: 0px;
+    background-color: rgb(5, 112, 32);
+}
+
+.mapLoc {
+    background-color: rgb(255, 0, 0);
+}
+
+.Vil {
+    background-color: rgb(100, 65, 13);
+}
+
+.Dun {
+    background-color: rgb(95, 93, 93);
+}
+
+#areatext {
+    width: 400px;
+    height: 40px;
+    background-color: rgb(63, 63, 62);
+    position: absolute;
+    left: 25px;
+    bottom: 325px;
+}
+
+#AreaNameTEXT {
+    font-size: 40px;
+    position: absolute;
+    left: 15px;
+    bottom: -45px;
+    color: gold;
+}
+
+#BasicPlayer {
+    width: 400px;
+    height: 300px;
+    background-color: rgb(94, 93, 93);
+    position: absolute;
+    left: 25px;
+    border-radius: 18px;
+    border-style: solid;
+    box-shadow: 0 0 6px 3px black;
+}
+
+#HPbar p, #STAbar p, #EXPbar p {
+    color: white;
+    position: absolute;
+    left: 50%;
+    font-size: 26px;
+    top: -27px;
+    transform: translateX(-50%);
+    font-weight: 1000;
+}
+
+#HPbar {
+    width: 375px;
+    height: 30px;
+    background-color: rgb(36, 35, 35);
+    position: absolute;
+    left: 15px;
+    top: 150px;
+}
+
+#STAbar {
+    width: 375px;
+    height: 30px;
+    background-color: rgb(36, 35, 35);
+    position: absolute;
+    left: 15px;
+    top: 200px;
+}
+
+#EXPbar {
+    width: 375px;
+    height: 30px;
+    background-color: rgb(36, 35, 35);
+    position: absolute;
+    left: 15px;
+    top: 250px;
+}
+
+#HPbarProg {
+    transition: 0.2s;
+    width: 365px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(218,24,27,1) 0%, rgba(244,111,111,1) 100%);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#STAbarProg {
+    transition: 0.2s;
+    width: 365px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,177,33,1) 0%, rgba(12,240,19,1) 100%);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#EXPbarProg {
+    transition: 0.2s;
+    width: 365px;
+    height: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(242,174,45,1) 0%, rgba(238,242,69,1) 100%);
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+#NameDisplay {
+    font-size: 50px;
+    font-family: barony;
+    position: absolute;
+    left: 25px;
+    top: -35px;
+}
+
+#ClassLevel {
+    color: gold;
+    font-size: 25px;
+    position: absolute;
+    left: 25px;
+    top: 50px;
+}
+
+.Rogue {
+    color: rgb(27, 26, 26);
+}
+
+.Warrior {
+    color: #751313;
+}
+
+.Ranger {
+    color: #024002;
+}
+
+.Mage {
+    color: #070792;
+}
+
+#CharacterScreen {
+    width: 400px;
+    height: max-content;
+    border-radius: 18px;
+    background-color:  rgb(94, 93, 93);
+    border-style: solid;
+    box-shadow: 0 0 6px 3px black;
+    position: absolute;
+    left: 450px;
+}
+
+.CharTextStat {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 15px;
+    font-size: 32px;
+    color: silver;
+    font-weight: 1000;
+    width: max-content;
+}
+
+#GeneralPopUP {
+    transition: 0.1s;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    pointer-events: none;
+}
+
+#GeneralPopUP p {
+    color: yellow;
+    font-size: 28px;
+    font-weight: 1000;
+    pointer-events: none;
+}
+
+#WholeInv {
+    width: 950px;
+    height: 900px;
+    background-color: rgb(54, 54, 54);
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border-style: solid;
+    box-shadow: 0 0 6px 3px black;
+}
+
+#equip {
+    width: 500px;
+    height: 475px;
+    border-style: solid;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#inventory {
+    width: 950px;
+    height: 414px;
+    border-style: solid;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 0px;
+    overflow-y: auto;
+}
+
+#itemInfo {
+    width: 438px;
+    height: 475px;
+    border-style: solid;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.Item {
+    transition: 0.2s;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(77, 76, 76);
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 5px;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
+}
+
+.ItemE {
+    transition: 0.2s;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(77, 76, 76);
+    background-repeat: no-repeat;
+    margin: 0px;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 5px;
+    color: rgb(20, 20, 20);
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.ItemClass {
+    position: relative;
+    left: 10px;
+    top: 10px;
+    pointer-events: none;
+}
+
+.ConsumeClass {
+    position: relative;
+    left: 4px;
+    top: 0px;
+    pointer-events: none;
+}
+
+.AmountText {
+    position: relative;
+    color: white;
+    font-size: 19px;
+    font-weight: 1000;
+    left: 45px;
+    bottom: 25px;
+}
+
+.AmountTextCon {
+    position: relative;
+    color: white;
+    font-size: 19px;
+    font-weight: 1000;
+    left: 45px;
+    bottom: 40px;
+}
+
+.Item:hover {
+    background-color: rgb(66, 66, 66);
+    box-shadow: inset 0 0 16px 8px #272727;
+}
+
+/* Classes for items in the inventory */
+
+.FC {
+    background-color: red;
+    box-shadow: inset 0 0 8px 4px #6b0101;
+}
+.EC {
+    background-color: green;
+    box-shadow: inset 0 0 8px 4px #174e01;
+}
+.DC {
+    background-color: lightblue;
+    box-shadow: inset 0 0 8px 4px rgb(86, 131, 146);
+}
+.CC {
+    background-color: rgb(45, 45, 250);
+    box-shadow: inset 0 0 8px 4px rgb(19, 19, 207);
+}
+.BC {
+    background-color: purple;
+    box-shadow: inset 0 0 8px 4px rgb(75, 2, 75);
+}
+.AC {
+    background-color: orange;
+    box-shadow: 0 0 7px 4px #a7a406;
+}
+.SC {
+    background-color: gold;
+    box-shadow: 0 0 7px 4px #be7e07;
+}
+
+/* Hover effects for the items in the inventory */
+
+.FC:hover {
+    background-color: rgb(218, 6, 6);
+    box-shadow: inset 0 0 16px 8px #440000;
+}
+.EC:hover {
+    background-color: rgb(1, 94, 1);
+    box-shadow: inset 0 0 16px 8px #103600;
+}
+.DC:hover {
+    background-color: rgb(93, 142, 158);
+    box-shadow: inset 0 0 16px 8px rgb(55, 94, 107);
+}
+.CC:hover {
+    background-color: rgb(28, 28, 209);
+    box-shadow: inset 0 0 16px 8px rgb(12, 12, 153);
+}
+.BC:hover {
+    background-color: rgb(95, 1, 95);
+    box-shadow: inset 0 0 16px 8px rgb(48, 2, 48);
+}
+.AC:hover {
+    background-color: rgb(192, 126, 4);
+    box-shadow: 0 0 14px 8px #747202;
+}
+.SC:hover {
+    background-color: rgb(196, 167, 2);
+    box-shadow: 0 0 14px 8px #7e5305;
+}
+
+/* Item Grade Classes */
+
+.F {
+    color: red;
+}
+.E {
+    color: green;
+}
+.D {
+    color: lightblue;
+}
+.C {
+    color: blue;
+}
+.B {
+    color: purple;
+}
+.A {
+    color: orange;
+    text-shadow: 0 0 4px gold;
+}
+.S {
+    color: gold;
+    text-shadow: 0 0 8px orange;
+}
+
+.ACCESSDENIED {
+    color: rgb(99, 10, 10);
+}
+
+.DAMAGEGIVEN {
+    color: rgb(11, 185, 11);
+}
+
+.CRITICAL {
+    color: rgb(185, 18, 18);
+}
+
+.ItemName {
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    transform: translateX(-50%);
+    text-decoration: underline;
+    width: max-content;
+    max-width: 100%;
+    text-align: center;
+}
+
+.InvText {
+    color: white;
+    left: 20px;
+    top: 70px;
+    position: relative;
+    font-size: 30px;
+    margin: 0px;
+}
+
+/* PLAYER DOLL INV */
+
+#torso, #head, #arm1, #arm2, #leg1, #leg2 {
+    pointer-events: none;
+}
+
+#torso {
+    width: 130px;
+    height: 180px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 40px 40px 8px 8px;
+    position: absolute;
+    left: 200px;
+    top: 80px;
+}
+
+#head {
+    width: 70px;
+    height: 70px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 60px;
+    position: absolute;
+    left: 225px;
+    top: 5px;
+}
+
+#arm1 {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 40px 8px 8px 40px;
+    position: absolute;
+    left: 60px;
+    top: 100px;
+}
+
+#arm2 {
+    width: 150px;
+    height: 30px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 8px 40px 40px 8px;
+    position: absolute;
+    right: 30px;
+    top: 100px;
+}
+
+#leg1 {
+    width: 40px;
+    height: 170px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 8px 8px 40px 40px;
+    position: absolute;
+    left: 200px;
+    top: 240px;
+}
+#leg2 {
+    width: 40px;
+    height: 170px;
+    background-color: rgb(100, 100, 100);
+    border-radius: 8px 8px 40px 40px;
+    position: absolute;
+    right: 170px;
+    top: 240px;
+}
+
+/* PLAYER DOLL INV */
+
+/* INV EQUIP */
+
+.EquipSlot {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(138, 138, 138);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#headslot {
+    position: absolute;
+    left: 225px;
+    top: 5px;
+}
+
+#torsoslot {
+    position: absolute;
+    left: 225px;
+    top: 100px;
+}
+
+#gloves1 {
+    position: absolute;
+    left: 60px;
+    top: 75px;
+}
+
+#gloves2 {
+    position: absolute;
+    right: 30px;
+    top: 75px;
+}
+
+#legs {
+    position: absolute;
+    left: 225px;
+    top: 220px;
+}
+
+#legslot1 {
+    position: absolute;
+    left: 180px;
+    top: 330px;
+}
+
+#legslot2 {
+    position: absolute;
+    right: 150px;
+    top: 330px;
+}
+
+#Wep1 {
+    position: absolute;
+    left: 30px;
+    top: 200px;
+}
+
+#Wep2 {
+    position: absolute;
+    left: 30px;
+    top: 290px;
+}
+
+#Ring1 {
+    position: absolute;
+    right: 30px;
+    top: 200px;
+}
+
+#Ring2 {
+    position: absolute;
+    right: 30px;
+    top: 290px;
+}
+
+.InvBut {
+    width: 100px;
+    height: 40px;
+    background-color: rgb(19, 19, 19);
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+#Equip {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+#UnEquip {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+}
+
+.InvBut:hover {
+    background-color: rgb(63, 63, 63);
+}
+
