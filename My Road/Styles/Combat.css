@@ -1,0 +1,533 @@
+
+#ActionButtons button {
+    transition: 0.1s;
+    font-size: 29px;
+    font-weight: 800;
+    font-family: roboto;
+    margin-left: -3px;
+    color: white;
+    background-color: black;
+    border-style: solid;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: max-content;
+    box-sizing: border-box;
+}
+
+#ActionButtons button:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+#ActionButtons button:first-child {
+    border-radius: 10px 0px 0px 10px;
+}
+
+#ActionButtons {
+    width: max-content;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+}
+
+#ActionButtons button:hover, #ActionButtons button:target {
+   border-width: 6px;
+}
+
+#CombatActionTexts {
+    width: 800px;
+    height: 400px;
+    background-color: #1b1b1b;
+    position: absolute;
+    left: 50%;
+    top: 25px;
+    margin-left: -400px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    box-shadow: inset 0px 0px 20px 12px #0c0c0c;
+    overflow: auto;
+}
+
+#PlayerBox, #EnemyBox {
+    width: 500px;
+    height: 250px;
+    background-color: #191919;
+    position: absolute;
+    top: 25px;
+    border-radius: 25px;
+    box-shadow: 0 0 4px 2px black;
+}
+
+#PlayerBox {
+    left: 25px;
+}
+
+#EnemyBox {
+    right: 25px;
+}
+
+#PlayerNameCombat, #EnemyNameCombat {
+    font-size: 40px;
+    font-family: runy;
+    text-align: center;
+    margin-top: 5px;
+
+}
+
+.Normal {
+    color: white;
+    text-shadow: 0 0 14px white;
+}
+
+.Wary {
+    color: rgb(219, 218, 126);
+    text-shadow: 0 0 14px rgb(219, 218, 126);
+}
+
+.Danger {
+    color: rgb(197, 120, 20);
+    text-shadow: 0 0 14px rgb(197, 120, 20);
+}
+
+.Death {
+    color: rgb(235, 36, 10);
+    text-shadow: 0 0 14px rgb(235, 36, 10);
+}
+#CombatHealthBar, #CombatStaminaBar, #CombatManaBar,  #EnemyCombatHealthBar, #EnemyCombatStaminaBar {
+    width: 450px;
+    height: 30px;
+    background-color: rgb(36, 35, 35);
+    position: absolute;
+    left: 25px;
+    top: 75px;
+}
+
+#CombatHealthBar, #EnemyCombatHealthBar {
+    top: 75px;
+}
+
+#CombatStaminaBar, #EnemyCombatStaminaBar {
+    top: 125px;
+}
+
+#CombatManaBar {
+    top: 175px;
+}
+
+#CombatHealthBarFill {
+    transition: 0.25s;
+    width: 450px;
+    height: 30px;
+    background: rgb(237,59,68);
+    background: linear-gradient(90deg, rgba(237,59,68,1) 0%, rgb(236, 152, 156) 10%, rgba(241,91,99,1) 25%, rgba(237,59,68,1) 100%);
+    animation-name: HealthBar;
+    animation-duration: 4s;
+    background-size: 200% 200%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 0 4px 2px rgb(235, 36, 10);
+}
+
+#CombatStaminaBarFill {
+    transition: 0.25s;
+    width: 450px;
+    height: 30px;
+    background: rgba(7,166,55,1);
+    background: linear-gradient(90deg, rgba(7,166,55,1) 0%, rgb(159, 236, 152) 10%, rgba(59,237,74,1) 25%, rgba(7,166,55,1) 100%);
+    animation-name: HealthBar;
+    animation-delay: 0.3s;
+    animation-duration: 4s;
+    background-size: 200% 200%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 0 4px 2px rgb(7, 161, 28);
+}
+
+#CombatManaBarFill {
+    transition: 0.25s;
+    width: 450px;
+    height: 30px;
+    background: rgb(19, 22, 231);
+    background: linear-gradient(90deg, rgb(22, 41, 216) 0%, rgb(99, 108, 238) 10%, rgb(61, 73, 241) 25%, rgb(22, 41, 216) 100%);
+    animation-name: HealthBar;
+    animation-delay: 0.6s;
+    animation-duration: 4s;
+    background-size: 200% 200%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 0 4px 2px rgb(0, 4, 255);
+}
+
+#EnemyCombatHealthBarFill {
+    transition: 0.25s;
+    width: 450px;
+    height: 30px;
+    background: rgb(237,59,68);
+    background: linear-gradient(90deg, rgba(237,59,68,1) 0%, rgb(236, 152, 156) 10%, rgba(241,91,99,1) 25%, rgba(237,59,68,1) 100%);
+    animation-name: HealthBar;
+    animation-duration: 4s;
+    background-size: 200% 200%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 0 4px 2px rgb(235, 36, 10);
+}
+
+#EnemyCombatStaminaBarFill {
+    transition: 0.25s;
+    width: 450px;
+    height: 100%;
+    background: rgba(7,166,55,1);
+    background: linear-gradient(90deg, rgba(7,166,55,1) 0%, rgb(159, 236, 152) 10%, rgba(59,237,74,1) 25%, rgba(7,166,55,1) 100%);
+    animation-name: HealthBar;
+    animation-duration: 4s;
+    background-size: 200% 200%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    box-shadow: 0 0 4px 2px rgb(7, 161, 28);
+}
+
+#CombatHealthText, #CombatStaminaText, #CombatManaText,  #EnemyCombatHealthText, #EnemyCombatStaminaText  {
+    transition: 0.1s;
+    font-size: 25px;
+    color: white;
+    text-shadow: 0 0 14px white;
+    font-weight: 1000;
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    opacity: 0;
+    background-clip:content-box;
+}
+
+@keyframes HealthBar {
+	0% {
+        background-position: 200% 50%;
+    }
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#CombatHealthBar:hover > #CombatHealthText{
+    opacity: 1;
+}
+#CombatStaminaBar:hover > #CombatStaminaText{
+    opacity: 1;
+}
+
+#CombatManaBar:hover > #CombatManaText{
+    opacity: 1;
+}
+
+#EnemyCombatHealthBar:hover > #EnemyCombatHealthText{
+    opacity: 1;
+}
+#EnemyCombatStaminaBar:hover > #EnemyCombatStaminaText{
+    opacity: 1;
+}
+
+
+.StatusEffekt {
+    box-shadow: 0 0 6px 3px black;
+    margin: 10px;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: Flash;
+    animation-duration: 2s;
+}
+
+@keyframes Flash {
+    0% {opacity: 1;}
+    50%{opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+#PlayerStatuses {
+    position: absolute;
+    left: 50px;
+    top: 300px;
+    height: max-content;
+    max-width: 475px;
+    width: max-content;
+}
+
+#EnemyStatuses {
+    position: absolute;
+    right: 50px;
+    top: 300px;
+    height: max-content;
+    max-width: 475px;
+    width: max-content;
+}
+
+#Physicals {
+    transition: 0.2;
+    width: 280px;
+    max-height: 330px;
+    height: max-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -16px;
+    bottom: 150px;
+    overflow-y: auto;
+}
+
+#Physicals::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+
+#Physicals button {
+    transform-origin: bottom center;
+    transition: 0.2s;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: roboto;
+    margin: 0px;
+    color: white;
+    background-color: black;
+    border-style: solid;
+    height: 70px;
+    width: 256px;
+}
+
+#Physicals button:first-child {
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+.PhysBut {
+    transform: scale(0);
+}
+
+#Physicals button:hover {
+    border-width: 6px;
+}
+
+#Magicals {
+    transition: 0.2;
+    width: 250px;
+    max-height: 330px;
+    height: max-content;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 223px;
+    bottom: 150px;
+    overflow-y: auto;
+}
+
+#Magicals::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+
+#Magicals button {
+    transform-origin: bottom center;
+    transition: 0.2s;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: roboto;
+    margin: 0px;
+    color: white;
+    background-color: black;
+    border-style: solid;
+    height: 70px;
+    width: 230px;
+}
+
+#Magicals button:first-child {
+    border-radius: 15px 15px 0px 0px;
+}
+
+
+.MagBut {
+    transform: scale(0);
+}
+
+#Magicals button:hover {
+    border-width: 6px;
+}
+
+#CombatActionTexts p {
+    text-align: center;
+    color: white;
+    font-weight: 1000;
+    font-size: 25px;
+    margin: 2px;
+}
+
+.Player {
+    color: rgb(41, 255, 27);
+    text-shadow: 0 0 9px rgb(44, 101, 24);
+    font-size: 25px;
+}
+
+.Enemy {
+    color: rgb(179, 40, 40);
+    text-shadow: 0 0 9px rgb(221, 13, 13);
+    font-size: 25px;
+}
+
+.DMG {
+    color: rgb(251, 255, 19);
+    text-shadow: 0 0 6px rgb(163, 10, 10);
+    font-size: 25px;
+    font-family: Helvetica;
+    font-weight: 600;
+}
+
+/* color: rgb(126, 29, 29);*/
+
+.Buffer {
+    color: black;
+    font-family: barony;
+    font-size: 40px !important;
+    padding-left: 15px;
+}
+
+#ItemHots {
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(-50%);
+    margin-left: 389px;
+    max-height: 330px;
+    height: max-content;
+    width: 105.67px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#ItemHots::-webkit-scrollbar {
+    width: 0px;
+  }
+
+#BattleEndPOP {
+    transition: 1.5s;
+    opacity: 0;
+    z-index: 1;
+    width: max-content;
+    height: max-content;
+    background-color: black;
+}
+
+#EndTitleBG {
+    z-index: 1;
+    background-color: darkred;
+    width: 500px;
+    height: 80px;
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    margin-left: -250px;
+}
+
+#EndTitleText {
+    z-index: 1;
+    font-size: 80px;
+    font-family: runy;
+    position: absolute;
+    left: 50%;
+    top: -85px;
+    transform: translateX(-50%);
+}
+
+.EndDefeatText {
+    color: rgb(56, 1, 1);
+    text-shadow: 0 0 20px rgb(31, 9, 6);
+}
+
+.EndWinText {
+    color: gold;
+    text-shadow: 0 0 20px rgb(194, 131, 14);
+}
+
+#EndTextBox1 {
+    z-index: 1;
+    width: 400px;
+    height: 40px;
+    border-style: ridge;
+    border-color: white;
+    background-color: #1b1b1b;
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 350px;
+    box-shadow: 0 0 10px 4px silver;
+}
+
+#EndText1 {
+    z-index: 1;
+    color: silver;
+    font-size: 19px;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#EndText2 {
+    z-index: 1;
+    color: silver;
+    font-size: 24px;
+    position: absolute;
+    left: 50%;
+    top: 420px;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#EndBattleBut {
+    z-index: 1;
+    transition: 0.2s;
+    position: absolute;
+    left: 50%;
+    top: 480px;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 60px;
+    font-size: 50px;
+    font-family: barony;
+    color: darkgray;
+    background-color: rgb(20, 20, 20);
+    border-style: solid;
+    border-radius: 4px;
+}
+
+#EndBattleBut:hover {
+    z-index: 1;
+    background-color: rgb(51, 51, 51);
+}
+
+#BattleEndBGFADE {
+    z-index: 1;
+    transition: 1s;
+    opacity: 0.85;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0px;
+}
+
+#BattleENDBORDER {
+    z-index: 1;
+    border-style: solid;
+    border-color: silver;
+    width: 600px;
+    height: 360px;
+    position: absolute;
+    left: 50%;
+    margin-left: -306px;
+    top: 200px;
+    border-width: 6px;
+    background-color: #0e0e0e;
+    box-shadow: 0 0 10px 4px silver;
+    border-radius: 5px;
+}
